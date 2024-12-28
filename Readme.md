@@ -6,9 +6,9 @@ This repository contains the code used for preprocessing and training the models
 
 The repository is organized into two main parts:
 
-1. **Data Preprocessing**: Scripts for preparing the Who is Alyx dataset for training. For details, see the [preprocessing README](path/to/preprocessing/README.md).
+1. **Data Preparation**: Scripts for preparing the Who is Alyx dataset for training. For details, see the [data preparation README](data_preparation/Readme.md).
 
-2. **Model Training**: Code for training and evaluating the CNN and GRU models. For details, see the [training README](path/to/training/README.md).
+2. **Model Training**: Code for training and evaluating the CNN and GRU models. For details, see the [training README](machine_learning/Readme.md).
 
 ## Citation
 
