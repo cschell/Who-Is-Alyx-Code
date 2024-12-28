@@ -1,0 +1,11 @@
+_target_: src.hyperparameters.cnn_hyperparameters.CNNHyperparameters
+
+num_layers: MISSING
+kernel_size: MISSING
+conv_stride: MISSING
+initial_channel_size: MISSING
+channels_factor: MISSING
+dropout: MISSING
+max_pool_size: MISSING
+activation: ReLU
+normalize_model_outputs: False

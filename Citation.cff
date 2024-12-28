@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+authors:
+  - family-names: "Rack"
+    given-names: "Christian"
+    orcid: "https://orcid.org/0000-0002-1870-5781"
+  - family-names: "Fernando"
+    given-names: "Tamara"
+  - family-names: "Yalcin"
+    given-names: "Murat"
+  - family-names: "Hotho"
+    given-names: "Andreas"
+    orcid: "https://orcid.org/0000-0003-2888-6797"
+  - family-names: "Latoschik"
+    given-names: "Marc Erich"
+    orcid: "https://orcid.org/0000-0001-7907-4950"
+title: "Who Is Alyx? Dataset Processing and Models"
+version: 1.0.0
+doi: 10.3389/frvir.2023.1272234
+date-released: 2023-08-15
+url: "https://github.com/cschell/Who-Is-Alyx-Code"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Rack"
+      given-names: "Christian"
+    - family-names: "Fernando"
+      given-names: "Tamara"
+    - family-names: "Yalcin"
+      given-names: "Murat"
+    - family-names: "Hotho"
+      given-names: "Andreas"
+    - family-names: "Latoschik"
+      given-names: "Marc Erich"
+  doi: "10.3389/frvir.2023.1272234"
+  journal: "Frontiers in Virtual Reality"
+  title: "Who Is Alyx? A New Behavioral Biometric Dataset for User Identification in XR"
+  volume: 4
+  year: 2023
+license: CC-BY-NC-SA-4.0

@@ -1,0 +1,58 @@
+# @package _global_
+
+defaults:
+  - override /model: cnn_model.yaml
+  - override /datamodule: window_datamodule.yaml
+  - override /lightning_module: classification_module.yaml
+  - override /callbacks: cnn_classification.yaml
+
+run_group: cnn_bra
+
+cache_datamodule: False
+
+seed: 42
+
+logger:
+  wandb:
+    project: "Who-Is-Alyx"
+    entity: ""
+
+trainer:
+  gpus: 1
+  min_epochs: 30
+  max_epochs: 30
+  auto_scale_batch_size: True
+  check_val_every_n_epoch: 1
+
+model:
+  num_out_classes: "auto"
+  window_size: ${datamodule.data_hyperparameters.window_size}
+  hyperparameters:
+    activation: LeakyReLU
+    channels_factor: 1
+    conv_stride: 1
+    dropout: 0.44
+    initial_channel_size: 600
+    kernel_size: 3
+    max_pool_size: 2
+
+datamodule:
+  data_path: ${data_dir}/15_fps_classifier_71_subjects.hdf5
+  batch_size: 200
+
+  dataset_kwargs:
+    debug_mode: False
+    coordinate_system:
+      forward: "x"
+      right: "z"
+      up: "y"
+  data_hyperparameters:
+    original_fps: 15
+    fps: 15
+    window_size: 300
+    data_encoding:
+      value: "body_relative_acceleration"
+
+lightning_module:
+  optimizer_options:
+    lr: 0.002

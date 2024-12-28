@@ -1,0 +1,31 @@
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - +experiments/who_is_alyx_paper=gru_brv.sweep
+  - ${args_no_hyphens}
+method: bayes
+name: gru_brv_71
+metric:
+  goal: maximize
+  name: best_min_accuracy/val
+parameters:
+  lightning_module.optimizer_options.lr:
+    distribution: log_uniform_values
+    max: 0.005
+    min: 0.0001
+  model.hyperparameters.rnn_hidden_size:
+    distribution: q_uniform
+    min: 150
+    max: 450
+    q: 50
+  model.hyperparameters.num_rnn_layers:
+    min: 2
+    max: 5
+  model.hyperparameters.dropout:
+    min: 0.0
+    max: 0.4
+
+program: run.py
+project: Who-is-alyx
+entity: 

@@ -1,0 +1,13 @@
+_target_: src.datamodules.retrieval_datamodule.RetrievalDatamodule
+
+defaults:
+  - /data_hyperparameters: window_data_hyperparameters.yaml
+
+data_stats_path: "train_stats.json"
+batch_size: MISSING
+data_path: MISSING
+seed: 42
+split:
+  train: 27
+  validation: 9
+  test: 27

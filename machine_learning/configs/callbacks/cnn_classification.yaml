@@ -1,0 +1,40 @@
+training_checkpoint:
+  _target_: pytorch_lightning.callbacks.ModelCheckpoint
+  monitor: "min_accuracy/val" # name of the logged metric which determines when model is improving
+  mode: "max" # can be "max" or "min"
+  save_top_k: 1 # save k best models (determined by above metric)
+  save_last: True # additionally always save model from last epoch
+  verbose: False
+  dirpath: "checkpoints/"
+  filename: "best_min_accuracy_val-epoch_{epoch:03d}"
+  auto_insert_metric_name: False
+
+mean_accuracy_checkpoint:
+  _target_: pytorch_lightning.callbacks.ModelCheckpoint
+  monitor: "accuracy/val" # name of the logged metric which determines when model is improving
+  mode: "max" # can be "max" or "min"
+  save_top_k: 1 # save k best models (determined by above metric)
+  verbose: False
+  dirpath: "checkpoints/"
+  filename: "best_mean_accuracy_val-epoch_{epoch:03d}"
+  auto_insert_metric_name: False
+
+cohen_checkpoint:
+  _target_: pytorch_lightning.callbacks.ModelCheckpoint
+  monitor: "cohen_kappa/val" # name of the logged metric which determines when model is improving
+  mode: "max" # can be "max" or "min"
+  save_top_k: 1 # save k best models (determined by above metric)
+  verbose: False
+  dirpath: "checkpoints/"
+  filename: "best_cohen_kappa_val-epoch_{epoch:03d}"
+  auto_insert_metric_name: False
+
+# early_stopping:
+#   _target_: pytorch_lightning.callbacks.EarlyStopping
+#   monitor: "accuracy/val"
+#   min_delta: 0.005
+#   patience: 5
+#   verbose: False
+#   strict: False
+#   stopping_threshold: 1
+#   divergence_threshold: 0.5

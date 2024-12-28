@@ -1,0 +1,8 @@
+_target_: src.models.cnn_model.CNNModel
+
+
+defaults:
+  - hyperparameters: cnn_hyperparameters.yaml
+
+num_out_classes: MISSING
+window_size: MISSING

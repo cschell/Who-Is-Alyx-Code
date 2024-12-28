@@ -1,0 +1,5 @@
+_target_: src.lightning_module.retrieval_gaussian_module.RetrievalGaussianModule
+
+optimizer_options:
+  name: "Adam"
+  lr: 0.001

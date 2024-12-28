@@ -1,0 +1,16 @@
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - +experiments/who_is_alyx_paper=seed_variance.sweep
+  - ${args_no_hyphens}
+method: grid
+name: seed_variance_sweep
+parameters:
+  seed:
+    values: [ 835, 847, 159, 635, 705, 683, 254, 342, 942, 249 ]
+
+
+program: run.py
+project: Who-is-alyx
+entity: 

@@ -1,0 +1,42 @@
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - +experiments/who_is_alyx_paper=cnn_bra.sweep
+  - ${args_no_hyphens}
+method: bayes
+name: cnn_bra_71
+metric:
+  goal: maximize
+  name: best_min_accuracy/val
+parameters:
+
+  lightning_module.optimizer_options.lr:
+    value: 0.002
+  model.hyperparameters.conv_stride:
+    value: 1
+  model.hyperparameters.max_pool_size:
+    values: [2, 3, 4]
+  model.hyperparameters.num_layers:
+    distribution: int_uniform
+    min: 1
+    max: 6
+  model.hyperparameters.kernel_size:
+    value: 3
+  model.hyperparameters.initial_channel_size:
+    values: [600, 800, 1000, 1400]
+  model.hyperparameters.channels_factor:
+    distribution: q_uniform
+    min: 1.2
+    max: 2
+    q: 0.05
+  model.hyperparameters.dropout:
+    distribution: q_uniform
+    min: 0.34
+    max: 0.55
+    q: 0.02
+  model.hyperparameters.activation:
+    value: "LeakyReLU"
+program: run.py
+project: Who-is-alyx
+entity: 

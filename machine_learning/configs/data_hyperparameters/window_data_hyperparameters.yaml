@@ -1,0 +1,9 @@
+_target_: src.hyperparameters.data_hyperparameters.WindowDataHyperparameters
+
+defaults:
+  - data_encoding: data_encoding.yaml
+
+fps: MISSING
+window_size: MISSING
+data_encoding:
+  value: MISSING

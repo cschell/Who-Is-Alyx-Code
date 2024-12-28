@@ -1,0 +1,5 @@
+_target_: src.lightning_module.retrieval_module.RetrievalModule
+
+optimizer_options:
+  name: "Adam"
+  lr: 0.001

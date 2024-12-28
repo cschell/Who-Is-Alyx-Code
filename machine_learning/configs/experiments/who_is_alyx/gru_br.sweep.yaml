@@ -1,0 +1,47 @@
+# @package _global_
+
+defaults:
+  - override /model: rnn_model.yaml
+  - override /datamodule: window_datamodule.yaml
+
+run_group: gru_br
+
+cache_datamodule: True
+
+logger:
+  wandb:
+    project: "Who-Is-Alyx"
+    entity: ""
+
+datamodule:
+  data_path: ${data_dir}/15_fps_classifier_71_subjects.hdf5
+  batch_size: 200
+  dataset_kwargs:
+    coordinate_system:
+      forward: "x"
+      right: "z"
+      up: "y"
+  data_hyperparameters:
+    original_fps: 15
+    fps: 15
+    window_size: 300
+    data_encoding:
+      value: "body_relative"
+
+lightning_module:
+  optimizer_options:
+    lr: MISSING
+
+trainer:
+  max_epochs: 70
+  min_epochs: 70
+  auto_scale_batch_size: True
+  check_val_every_n_epoch: 1
+
+model:
+  num_out_classes: "auto" # is set in train.py
+  hyperparameters:
+    cell_type: "GRU"
+    num_rnn_layers: MISSING
+    rnn_hidden_size: MISSING
+    dropout: MISSING
